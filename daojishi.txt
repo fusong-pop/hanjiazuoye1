@@ -1,0 +1,14 @@
+function showTime(){
+    var timego=new Date("2020-9-1 12:00:00");
+    var timenow=new Date();
+    var time=timego.getTime()-timenow.getTime();
+    var day=parseInt(time/1000/60/60/24);
+    var hou=parseInt((time/1000/60/60)%24);
+    var min=parseInt((time/1000/60)%60);
+    var sec=parseInt(time/1000)%60;
+    var minsec=time%1000;
+    document.getElementByClassName("day").innerHTML=day;
+    document.getElementByClassName("hour").innerHTML=hou;
+    document.getElementByClassName("min").innerHTML=min;
+    document.getElementByClassName("sceo").innerHTML=sec;
+}setInterval(showTime,1000);

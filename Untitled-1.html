@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>距离圣诞节还有
+        <span id="day"></span>天
+        <span id="hour"></span>小时
+        <span id="min"></span>分
+        <span id="sceo"></span>秒
+    </div>
+    <script>
+        function showTime(){
+        var timego=new Date("2020-9-1 12:00:00");
+        var timenow=new Date();
+        var time=timego.getTime()-timenow.getTime();
+        var day=parseInt(time/1000/60/60/24);
+        var hou=parseInt((time/1000/60/60)%24);
+        var min=parseInt((time/1000/60)%60);
+        var sec=parseInt(time/1000)%60;
+        var minsec=time%1000;
+        document.getElementById("day").innerHTML=day;
+        document.getElementById("hour").innerHTML=hou;
+        document.getElementById("min").innerHTML=min;
+        document.getElementById("sceo").innerHTML=sec;
+    }setInterval(showTime,1000);
+  </script>
+</body>
+</html>
